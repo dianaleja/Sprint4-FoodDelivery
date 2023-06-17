@@ -1,8 +1,13 @@
 import React from 'react'
+import BotonSteps from '../../components/botonSteps/BotonSteps'
 
 const Steps = () => {
   return (
-    <div>Steps</div>
+    <>
+        <h1>Steps</h1>
+        <BotonSteps/>
+    </>
+    
   )
 }
 
