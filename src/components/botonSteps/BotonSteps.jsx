@@ -4,7 +4,9 @@ import React from 'react'
 
 const BotonSteps = () => {
   return (
-    <div>BotonSteps</div>
+    <>
+    <h1>BotonSteps</h1> 
+    </>
   )
 }
 
