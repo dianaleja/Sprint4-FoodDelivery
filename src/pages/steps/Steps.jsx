@@ -6,6 +6,7 @@ const Steps = () => {
     <>
         <h1>Steps</h1>
         <BotonSteps/>
+        
     </>
     
   )
