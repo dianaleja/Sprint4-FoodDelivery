@@ -3,7 +3,6 @@ import {
   Image,
   Text,
   Box,
-  Button,
   Card,
   Stack,
   CardBody,
@@ -15,57 +14,14 @@ import "slick-carousel/slick/slick-theme.css";
 import geoLocation from "../../assets/icon/locatio.png";
 import TodaySpecial from "../../assets/todayspecial.png";
 import domi from "../../assets/domi.png";
-import iconAll from "../../assets/icon/all.png";
-import iconHamburguer from "../../assets/icon/hamburguer.png";
-import iconPizza from "../../assets/icon/pizza.png";
-import iconSalad from "../../assets/icon/ensalada.png";
-import iconCoffe from "../../assets/icon/taza-de-cafe.png";
 import restaurant1 from "../../assets/restaurant/rest1.png";
 import Footer from "../../components/footer/Footer";
 import { FaStar } from "react-icons/fa";
+import CarruselCategory from "../../components/carruselCategory/CarruselCategory";
 
-const categories = [
-  {
-    id: 1,
-    nombre: "All",
-    image: iconAll,
-  },
-  {
-    id: 2,
-    nombre: "Fast food",
 
-    image: iconHamburguer,
-  },
-  {
-    id: 3,
-    nombre: "Pizzas",
-
-    image: iconPizza,
-  },
-  {
-    id: 4,
-    nombre: "Salad",
-
-    image: iconSalad,
-  },
-  {
-    id: 5,
-    nombre: "Coffe",
-
-    image: iconCoffe,
-  },
-];
 
 const Home = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    speed: 900,
-    autoplaySpeed: 5000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
 
   const settings2 = {
     dots: false,
@@ -92,15 +48,13 @@ const Home = () => {
           </Box>
 
           {/*............ CARRUSEL ENVIOS......... */}
-          <Slider {...settings2}  >
-            <Box display="flex" flexDirection="row"   
-                  >
+          <Slider {...settings2}>
+            <Box display="flex" flexDirection="row ">
               <Image
                 src={TodaySpecial}
                 alt="Today Special"
                 borderRadius="9px"
                 w="325px"
-               
               />
             </Box>
             <Box>
@@ -109,7 +63,7 @@ const Home = () => {
                 alt="Domicilio"
                 borderRadius="9px"
                 w="125px"
-             
+                marginLeft="40px"
               />
             </Box>
           </Slider>
@@ -119,32 +73,9 @@ const Home = () => {
           </Text>
 
           {/*............ CARRUSEL CATEGORIAS......... */}
+          <CarruselCategory/>
 
-          <Slider {...settings}>
-            {categories.map((category) => (
-              <Box key={category.id} p={2}>
-                <Button
-                  bg="#FFE031"
-                  w="100%" // El botón ocupará el 100% del espacio disponible
-                  maxW="250px"
-                  transition="all 0.3s"
-                  _hover={{ transform: "scale(1.1)" }}
-                >
-                  <Box display="flex" flexDirection="row" alignItems="center">
-                    <Image
-                      src={category.image}
-                      alt={category.nombre}
-                      marginRight="4px"
-                    />
-                    <Text marginLeft="px" fontSize="xs" fontWeight="light">
-                      {category.nombre}
-                    </Text>
-                  </Box>
-                </Button>
-              </Box>
-            ))}
-          </Slider>
-
+       
           {/*............ CARD DE RESTAURANTES.......... */}
           <Box
             display="flex"
@@ -163,13 +94,20 @@ const Home = () => {
             >
               <Image
                 objectFit="cover"
-                maxW={{ base: "40%", sm: "200px" }}
+                // maxW={{ base: "40%", sm: "300px" }}
+                width="150px"
+                height="136px"
                 src={restaurant1}
                 alt="restaurant1"
+                borderRadius="10px"
+                style={{
+                  clipPath: "polygon(100% 0, 100% 15%, 60% 100%, 0 100%, 0 0)",
+                }}
+                // borderRadius="7% 176% 124% -4%/19% 0% 87% 62%"
               />
 
               <Stack>
-                <CardBody>
+                <CardBody padding="13px" width="224px" padding-top="17px">
                   <Text size="md">Pardes Restaurant</Text>
 
                   {/* Agregar rating de estrellas */}
@@ -181,53 +119,7 @@ const Home = () => {
                     <FaStar size={14} color="gray" />
                   </Box>
 
-                  <Text py="2" size="s" letterSpacing="-0.3px">
-                    Work time 09:30 - 23:00
-                  </Text>
-                  <Text py="0" fontSize="xs" color="#A7A7A7">
-                    Before you 4$
-                  </Text>
-                </CardBody>
-              </Stack>
-            </Card>
-          </Box>
-
-          <Box
-            display="flex"
-            alignItems="center"
-            w="358px"
-            h="106px"
-            p={2}
-            borderRadius="18px"
-            marginTop="70px"
-          >
-            <Card
-              display="flex"
-              flexDirection="row"
-              overflow="hidden"
-              variant="outline"
-            >
-              <Image
-                objectFit="cover"
-                maxW={{ base: "40%", sm: "200px" }}
-                src={restaurant1}
-                alt="restaurant1"
-              />
-
-              <Stack>
-                <CardBody>
-                  <Text size="md">Pardes Restaurant</Text>
-
-                  {/* Agregar rating de estrellas */}
-                  <Box display="flex" alignItems="center">
-                    <FaStar size={14} color="#FFC107" />
-                    <FaStar size={14} color="#FFC107" />
-                    <FaStar size={14} color="#FFC107" />
-                    <FaStar size={14} color="#FFC107" />
-                    <FaStar size={14} color="gray" />
-                  </Box>
-
-                  <Text py="2" size="s" letterSpacing="-0.3px">
+                  <Text py="2" fontSize="15px" letterSpacing="-0.3px">
                     Work time 09:30 - 23:00
                   </Text>
                   <Text py="0" fontSize="xs" color="#A7A7A7">
