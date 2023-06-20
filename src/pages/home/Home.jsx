@@ -95,7 +95,7 @@ const Home = () => {
               <Image
                 objectFit="cover"
                 // maxW={{ base: "40%", sm: "300px" }}
-                width="150px"
+                width="167px"
                 height="136px"
                 src={restaurant1}
                 alt="restaurant1"

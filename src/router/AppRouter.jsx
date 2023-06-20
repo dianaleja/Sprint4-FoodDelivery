@@ -7,6 +7,7 @@ import Steps from '../pages/steps/Steps';
 import GlobalStyles from '../components/styles/GlobalStyle';
 import RestaurantsDetails from '../pages/restaurantsDetails/RestaurantsDetails';
 import FoodPlate from '../pages/foodPlate/FoodPlate';
+import Search from '../pages/search/Search';
 
 
 const AppRouter = () => {
@@ -19,7 +20,8 @@ const AppRouter = () => {
                         <Route index element={<Home/>}/>
                         <Route path={"steps"} element={<Steps/>}/>
                         <Route path={"details"} element={<RestaurantsDetails/>}/>  
-                        <Route path={"foodplate"} element={<FoodPlate />}/>                    
+                        <Route path={"foodplate"} element={<FoodPlate />}/>  
+                        <Route path={"search"} element={<Search />}/>                   
                     </Route>
                     <Route path="*" element={<NotFound />}/>
                 </Routes>
